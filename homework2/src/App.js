@@ -8,7 +8,7 @@ class CurrentDateTime extends Component {
 
   render() {
     return (
-      <p>Current Time: {this.getCurrentDateTime()}</p>
+      <p>Current Time: <span id="date-time">{this.getCurrentDateTime()}</span></p>
     );
   }
 }
