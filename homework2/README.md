@@ -1,8 +1,8 @@
-This is homework 2 for Spring 2019 - Magenic Masters - React / Redux
+This is **homework 2** for Spring 2019 - Magenic Masters - React / Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Extra Credit: ES6 feature used was Arrow Functions **
+**Extra Credit: ES6 feature used was Arrow Functions**
 
 ## Available Scripts
 
