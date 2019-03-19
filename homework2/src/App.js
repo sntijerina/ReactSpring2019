@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './override.css';
 
 class CurrentDateTime extends Component {
   
@@ -8,7 +9,7 @@ class CurrentDateTime extends Component {
 
   render() {
     return (
-      <p>Current Time: <span id="date-time">{this.getCurrentDateTime()}</span></p>
+      <p>Current Date/Time: <span className="date-time">{this.getCurrentDateTime()}</span></p>
     );
   }
 }
