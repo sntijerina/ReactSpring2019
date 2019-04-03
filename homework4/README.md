@@ -1,4 +1,8 @@
+This is **homework 4** for Spring 2019 - Magenic Masters - React / Redux
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+**With Axios**
 
 ## Available Scripts
 
