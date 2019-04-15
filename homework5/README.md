@@ -1,8 +1,6 @@
-This is **homework 5** for Spring 2019 - Magenic Masters - React / Redux
+This is **homework 5** **With Redux** for Spring 2019 - Magenic Masters - React / Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-**With Redux**
 
 ## Available Scripts
 
