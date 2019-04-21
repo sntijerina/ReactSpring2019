@@ -1,0 +1,30 @@
+.weather-card {
+    display: flex;
+    margin-top: 20px;
+    width: 450px;
+  }
+
+  .weather-card-details {
+    display:  flex;
+    flex-direction: column;
+  }
+
+  .weather-card-image {
+    display: flex;
+    flex-direction: column;
+    align-items: 'center';
+    justify-content: center;
+  }
+
+  .weather-card-content {
+    flex: '1 0 auto';
+  }
+
+  .weather-card-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .weather-card-detail {
+    margin-right: 5px;
+  }
