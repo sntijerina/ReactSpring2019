@@ -47,7 +47,7 @@ class Weather extends Component {
                 maxTemp: response.data.main.temp_max,
                 pressure: response.data.main.pressure,
                 humidity: response.data.main.humidity,
-                wind: response.data.wind,
+                wind: response.data.wind.speed,
                 overcast: response.data.weather[0].description,
                 icon: `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
             });
@@ -74,6 +74,7 @@ class Weather extends Component {
             temp = { this.state.temp } 
             maxTemp = { this.state.maxTemp }
             minTemp = { this.state.minTemp }
+            wind = { this.state.wind }
             pressure = { this.state.pressure }
             humidity = { this.state.humidity }
             overcast = { this.state.overcast }

@@ -1,46 +1,68 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 import Clock from "./Clock";
-import Weather from "./Weather";
 
 const styles = theme => ({
   card: {
-    maxWidth: 600,
-    maxHeight: 400
+    display: 'flex',
+    marginTop: 20,
+    width: 450
   },
-  actions: {
-    display: "flex"
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  image: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  content: {
+    flex: '1 0 auto',
+  },
+  icon: {
+    width: 75,
+    height: 75
+  },
+  detail: {
+    marginRight: 5
   }
 });
 
 class WeatherCard extends Component {
   render() {
     const { classes } = this.props;
-    const { imgUrl } = this.props.icon;
+   
     return (
-            <Card 
-              className={classes.card}
-            >
-            <CardHeader title={this.props.name} subheader={<Clock />} />
-            <CardMedia>
-              <img src={this.props.icon} alt={this.props.overcast} />
-            </CardMedia>
-            <CardContent>
-              <Typography component="div" >
-              <ul>
-                <li>Current: <span>{this.props.temp}°</span></li>
-                <li>High: <span>{this.props.maxTemp}°</span></li>
-                <li>Low: <span>{this.props.minTemp}°</span></li>
-              </ul>
-              </Typography>
-            </CardContent>
+            <Card className={classes.card}>
+            <div className={classes.image}>
+              <img src={this.props.icon} alt={this.props.overcast} className={classes.icon}/>
+            </div> 
+            <div className={classes.details}>
+              <CardContent className={classes.content}>
+                <Typography component="h5" variant="h5" >
+                  {this.props.name} {this.props.temp}°
+                </Typography>
+                <Typography variant="subtitle1">
+                    {this.props.overcast}
+                </Typography>
+                <Typography variant="subtitle2">
+                  <span className={classes.detail}><b>High:</b> {this.props.maxTemp}°</span>
+                  <span className={classes.detail}><b>Low:</b> {this.props.minTemp}°</span>
+                </Typography>
+                <Typography variant="subtitle2">
+                  <span className={classes.detail}><b>Humidity:</b> {this.props.humidity}%</span>
+                  <span className={classes.detail}><b>Pressure:</b> {this.props.pressure}hPa</span>
+                  <span className={classes.detail}><b>Wind:</b> {this.props.wind}m/h</span>
+                </Typography>
+              </CardContent>
+            </div>
+            
           </Card>
     );
   }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class WeatherForm extends Component {
     constructor() {
@@ -19,8 +18,8 @@ class WeatherForm extends Component {
     render () {
         return (
             <form onSubmit = {this.handleSubmit}>
-                    <input type="text" name="city" placeholder="City..."/>
-                    <button type="submit">Get Weather</button>
+                    <TextField type="text" name="city" placeholder="City..."/>
+                    <Button  variant="contained" color="primary" type="submit">Get Weather</Button>
             </form>
         );
     }
