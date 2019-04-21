@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather renders 1`] = `
+<WithStyles(Grid)
+  alignItems="center"
+  container={true}
+  direction="column"
+  justify="center"
+  spacing={0}
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+>
+  <WithStyles(Grid)
+    item={true}
+    xs={3}
+  >
+    <WeatherForm
+      onFormSubmit={[Function]}
+    />
+    <WeatherCard
+      humidity=""
+      icon=""
+      maxTemp=""
+      minTemp=""
+      name=""
+      overcast=""
+      pressure=""
+      temp=""
+      wind=""
+    />
+  </WithStyles(Grid)>
+</WithStyles(Grid)>
+`;
