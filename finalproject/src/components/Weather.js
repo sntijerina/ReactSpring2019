@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import Grid from "@material-ui/core/Grid";
 import WeatherForm from './WeatherForm';
 import WeatherCard from './WeatherCard';
-import axios from 'axios';
-
-const weatherMapApiKey = '75ca74d04777316985b8b57142df457b';
-const weatherMapApiUrl = `http://api.openweathermap.org/data/2.5/weather?appid=${weatherMapApiKey}&units=imperial`;
-const defaultLocation = 'chicago';
+import GetWeatherApi from "../api/GetWeatherApi";
 
 class Weather extends Component {
     
-    constructor(props) 
+    constructor() 
     {
-      super(props);
-
+      super();
       this.state  = { 
         name: '',
         temp: '', 
@@ -30,30 +25,27 @@ class Weather extends Component {
       this.getWeather = this.getWeather.bind(this);
     }
 
-    componentDidMount = ()=> { this.getWeather(defaultLocation) };
+    componentDidMount = ()=> { this.getWeather() };
 
-    getWeather(location) {
-        let self = this;
-        const encodedLocation = encodeURIComponent(location);
-        let apiUrl = `${weatherMapApiUrl}&q=${encodedLocation}`;
-     
-        axios.get(apiUrl)
+    getWeather = event => {
+      let self = this;
+      return GetWeatherApi(event)
         .then(response => { 
-            console.log(response);
-            self.setState({ 
-                name: response.data.name,
-                temp: response.data.main.temp,
-                minTemp: response.data.main.temp_min, 
-                maxTemp: response.data.main.temp_max,
-                pressure: response.data.main.pressure,
-                humidity: response.data.main.humidity,
-                wind: response.data.wind.speed,
-                overcast: response.data.weather[0].description,
-                icon: `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
-            });
+          console.log(response);
+          self.setState({ 
+              name: response.data.name,
+              temp: response.data.main.temp,
+              minTemp: response.data.main.temp_min, 
+              maxTemp: response.data.main.temp_max,
+              pressure: response.data.main.pressure,
+              humidity: response.data.main.humidity,
+              wind: response.data.wind.speed,
+              overcast: response.data.weather[0].description,
+              icon: `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
+          })
         })
         .catch(error => {
-            console.log(error);
+          console.log(error);
         });
     }
 
