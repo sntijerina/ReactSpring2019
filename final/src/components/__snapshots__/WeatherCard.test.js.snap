@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Card Weather Card renders 1`] = `
+<WithStyles(Card)
+  className="weather-card"
+>
+  <div
+    className="weather-card-image"
+  >
+    <img
+      className="weather-card-icon"
+    />
+  </div>
+  <div
+    className="weather-card-details"
+  >
+    <WithStyles(CardContent)
+      className="weather-card-content"
+    >
+      <WithStyles(Typography)
+        component="h5"
+        variant="h5"
+      >
+         
+        °
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="subtitle1"
+      />
+      <WithStyles(Typography)
+        variant="subtitle2"
+      >
+        <span
+          className="weather-card-detail"
+        >
+          <b>
+            High:
+          </b>
+           
+          °
+        </span>
+        <span
+          className="weather-card-detail"
+        >
+          <b>
+            Low:
+          </b>
+           
+          °
+        </span>
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        variant="subtitle2"
+      >
+        <span
+          className="weather-card-detail"
+        >
+          <b>
+            Humidity:
+          </b>
+           
+          %
+        </span>
+        <span
+          className="weather-card-detail"
+        >
+          <b>
+            Pressure:
+          </b>
+           
+          hPa
+        </span>
+        <span
+          className="weather-card-detail"
+        >
+          <b>
+            Wind:
+          </b>
+           
+          m/h
+        </span>
+      </WithStyles(Typography)>
+    </WithStyles(CardContent)>
+  </div>
+</WithStyles(Card)>
+`;

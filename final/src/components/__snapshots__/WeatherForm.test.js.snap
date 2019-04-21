@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Form Weather Form renders 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <TextField
+    name="city"
+    onChange={[Function]}
+    placeholder="City..."
+    required={false}
+    select={false}
+    type="text"
+    variant="standard"
+  />
+  <WithStyles(Button)
+    color="primary"
+    type="submit"
+    variant="contained"
+  >
+    Get Weather
+  </WithStyles(Button)>
+</form>
+`;
