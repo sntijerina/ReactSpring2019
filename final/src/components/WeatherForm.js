@@ -1,48 +1,31 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-class WeatherForm extends Component {
-    constructor() {
-        super();
+export default function WeatherForm(props) {
+    const [city, setCity] = useState(undefined);
 
-        this.state = {
-            city: ""
-        };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleSubmit = event => {
+    function handleSubmit (event) {
         event.preventDefault();
-        typeof this.props.onFormSubmit === 'function' &&
-            this.props.onFormSubmit(this.state.city);
+        typeof props.onFormSubmit === 'function' &&
+            props.onFormSubmit(city);
     }
 
-    handleChange = event => {
-        let value = event.target.value;
-        this.setState({ city: value });
-    };
-
-    render () {
-        return (
-            <form onSubmit = {this.handleSubmit}>
-                    <TextField 
-                        type="text" 
-                        name="city" 
-                        placeholder="City..." 
-                        onChange={this.handleChange}
-                    />
-                    <Button  
-                        variant="contained" 
-                        color="primary" 
-                        type="submit">
-                        Get Weather
-                    </Button>
-            </form>
-        );
-    }
+    return (
+        <form onSubmit = {handleSubmit}>
+                <TextField 
+                    type="text" 
+                    name="city" 
+                    placeholder="City..." 
+                    onChange={event => setCity(event.target.value)}
+                />
+                <Button  
+                    variant="contained" 
+                    color="primary" 
+                    type="submit">
+                    Get Weather
+                </Button>
+        </form>
+    )
 }
 
-export default WeatherForm;
